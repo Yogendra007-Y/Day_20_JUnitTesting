@@ -8,7 +8,7 @@ public class userRegistrationFormat {
     Matcher matcher;
     /* method firstName to validate first name format
        @param FirstName return boolean value
-     */
+    */
     public boolean firstName(String FirstName){
         String regexFirstName = "^[A-Z]{1}[a-z]{2,}";
         pattern = Pattern.compile(regexFirstName);
@@ -17,7 +17,7 @@ public class userRegistrationFormat {
     }
     /* method lastName to validate last name format
        @param LastName return boolean value
-     */
+    */
     public boolean lastName(String LastName){
         String regexLastName = "^[A-Z]{1}[a-z]{2,}";
         pattern = Pattern.compile(regexLastName);
@@ -26,49 +26,59 @@ public class userRegistrationFormat {
     }
     /* method emailValidation to validate email format0
        @param Email return boolean value
-     */
+    */
     public boolean emailValidation(String Email){
-        String regxEmail = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
-        pattern = Pattern.compile(regxEmail);
+        String regexEmail = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
+        pattern = Pattern.compile(regexEmail);
         matcher = pattern.matcher(Email);
         return matcher.matches();
     }
     /* method  numberValidation to validate phone no format
        @param PhoneNo return boolean value
-     */
+    */
     public boolean numberValidation(String PhoneNo){
-        String regxPhoneNo = "^[0-9]{2}\\s[0-9]{10}";
-        pattern = Pattern.compile(regxPhoneNo);
+        String regexPhoneNo = "^[0-9]{2}\\s[0-9]{10}";
+        pattern = Pattern.compile(regexPhoneNo);
         matcher = pattern.matcher(PhoneNo);
         return matcher.matches();
     }
     /* method loginValidation to validate password format 1
        @param Password return boolean value
-     */
-    public boolean loginRule1Validation(String name){
-        String regex = "^[A-Za-z0-9]{8,}";
-        pattern = Pattern.compile(regex);
-        matcher = pattern.matcher(name);
+    */
+    public boolean loginRule1Validation(String Password){
+        String regexPassword1 = "^[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regexPassword1);
+        matcher = pattern.matcher(Password);
         return matcher.matches();
     }
     /* method loginValidation to validate password format 2
        Password should have at least 1 upper case value
        @param Password return boolean value
-     */
-    public boolean loginRule2Validation(String name){
-        String regex = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
-        pattern = Pattern.compile(regex);
-        matcher = pattern.matcher(name);
+    */
+    public boolean loginRule2Validation(String Password){
+        String regexPassword = "^(?=.*[A-Z]){1}(?=.*[a-z]).{8,}$";
+        pattern = Pattern.compile(regexPassword);
+        matcher = pattern.matcher(Password);
         return matcher.matches();
     }
     /* method loginValidation to validate password format 2
        Password should have at least 1 or more digits
        @param Password return boolean value
-     */
-    public boolean loginRule3Validation(String name){
-        String regex = "(?=.*[A-Z]){1}(?=.*[0-9])(?=.*[a-z]).{8,}$";
-        pattern = Pattern.compile(regex);
-        matcher = pattern.matcher(name);
+    */
+    public boolean loginRule3Validation(String Password){
+        String regexPassword3 = "(?=.*[A-Z]){1}(?=.*[0-9])(?=.*[a-z]).{8,}$";
+        pattern = Pattern.compile(regexPassword3);
+        matcher = pattern.matcher(Password);
+        return matcher.matches();
+    }
+    /* method loginValidation to validate password format 2
+       Password should have 1 special character
+       @param Password return boolean value
+    */
+    public boolean loginRule4Validation(String Password){
+        String regexPassword4 = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%!]).{8,}$";
+        pattern = Pattern.compile(regexPassword4);
+        matcher = pattern.matcher(Password);
         return matcher.matches();
     }
 }
