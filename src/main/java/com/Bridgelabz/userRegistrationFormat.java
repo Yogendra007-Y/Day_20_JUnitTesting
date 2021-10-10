@@ -10,8 +10,8 @@ public class userRegistrationFormat {
        @param FirstName return boolean value
      */
     public boolean firstName(String FirstName){
-        String regex = "^[A-Z]{1}[a-z]{2,}";
-        pattern = Pattern.compile(regex);
+        String regexFirstName = "^[A-Z]{1}[a-z]{2,}";
+        pattern = Pattern.compile(regexFirstName);
         matcher = pattern.matcher(FirstName);
         return matcher.matches();
     }
@@ -19,8 +19,8 @@ public class userRegistrationFormat {
        @param LastName return boolean value
      */
     public boolean lastName(String LastName){
-        String regex = "^[A-Z]{1}[a-z]{2,}";
-        pattern = Pattern.compile(regex);
+        String regexLastName = "^[A-Z]{1}[a-z]{2,}";
+        pattern = Pattern.compile(regexLastName);
         matcher = pattern.matcher(LastName);
         return matcher.matches();
     }
@@ -28,18 +28,27 @@ public class userRegistrationFormat {
        @param Email return boolean value
      */
     public boolean emailValidation(String Email){
-        String regx = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
-        pattern = Pattern.compile(regx);
+        String regxEmail = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z][2,3]){0,1}$";
+        pattern = Pattern.compile(regxEmail);
         matcher = pattern.matcher(Email);
         return matcher.matches();
     }
-    /* method  numberValidationto validate phone no format
-     * @param PhoneNo return boolean value
+    /* method  numberValidation to validate phone no format
+       @param PhoneNo return boolean value
      */
     public boolean numberValidation(String PhoneNo){
-        String regx = "^[0-9]{2}\\s[0-9]{10}";
-        pattern = Pattern.compile(regx);
+        String regxPhoneNo = "^[0-9]{2}\\s[0-9]{10}";
+        pattern = Pattern.compile(regxPhoneNo);
         matcher = pattern.matcher(PhoneNo);
+        return matcher.matches();
+    }
+    /* method loginValidation to validate password format 1
+       @param Password return boolean value
+     */
+    public boolean loginValidation(String Password) {
+        String regexPassword = "[A-Za-z0-9]{8,}";
+        pattern = Pattern.compile(regexPassword);
+        matcher = pattern.matcher(Password);
         return matcher.matches();
     }
 }
