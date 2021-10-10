@@ -42,11 +42,11 @@ public class userRegistrationFormat {
         matcher = pattern.matcher(PhoneNo);
         return matcher.matches();
     }
-    /* method loginValidation to validate password format 1
+    /* method loginValidation to validate password format 2
        @param Password return boolean value
      */
-    public boolean loginValidation(String Password) {
-        String regexPassword = "[A-Za-z0-9]{8,}";
+    public boolean loginValidation(String Password){
+        String regexPassword = "^[A-Z]{1}[A-Za-z0-9]{8,}";
         pattern = Pattern.compile(regexPassword);
         matcher = pattern.matcher(Password);
         return matcher.matches();
